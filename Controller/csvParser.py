@@ -26,7 +26,7 @@ def search_cow(cow_id):
 
     for row in data:
         if row[0] == cow_id:  # Check if the cow_id matches
-            if row[4] == "Goat":  # Check if the species is a goat in column 5
+            if row[4].split(" ")[1] == "Goat":  # Check if the species is a goat in column 5
                 print("Hit: This is a goat!")
                 return False
             else :

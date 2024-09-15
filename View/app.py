@@ -53,14 +53,13 @@ class MainWindow(QWidget):
 		cowId = self.cowIdInput.text()
 		cowAge = self.cowAgeInput.text()
 		cowNom = self.cowNomInput.text()
-		print(len(cowId))
 
 		isValid, msg = validateInput(cowId, cowAge, cowNom)
 		if isValid:
 			state = milkCow(cowId, cowAge, cowNom)
 			QMessageBox.about(self, "Milking Status", f"The Cow is Milked.")
 		else:
-			QMessageBox.warning(self, "Invalid Input", msg)
+			print(msg)
 
 		# Print the data from the CSV file (ไม่เกี่ยวกับโจทย์)
 		data = parse_csv()
